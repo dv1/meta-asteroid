@@ -29,3 +29,21 @@ generate_sparse_image() {
 }
 
 IMAGE_POSTPROCESS_COMMAND:append = " generate_sparse_image ; "
+
+# This defines what shell to use for interactive use, that is,
+# when users log in and type in commands. The default shell is
+# not affected by this, however.
+#
+# This allows for keeping the default shell that runs scripts
+# unchanged, while switching the interactive shell to something
+# more sophisticated, like bash. This is useful for debugging
+# and development. Thus, this variable is usually modified by
+# development images, not production ones.
+DEFAULT_INTERACTIVE_SHELL ?= "/bin/sh"
+
+# Set the interactive shell for root and ceres.
+# There are no other users that need this setting.
+EXTRA_USERS_PARAMS += '\
+    usermod -s "${DEFAULT_INTERACTIVE_SHELL}" root; \
+    usermod -s "${DEFAULT_INTERACTIVE_SHELL}" ceres; \
+'

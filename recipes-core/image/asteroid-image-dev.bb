@@ -2,6 +2,10 @@ inherit asteroid-image
 DESCRIPTION = "Asteroid image for developers, contains development and debugging tools"
 EXTRA_IMAGE_FEATURES += "tools-debug tools-testapps debug-tweaks"
 
+# Set bash as the interactive shell for ceres and root. Bash is
+# much more useful for development than the basic default shell.
+DEFAULT_INTERACTIVE_SHELL = "/bin/bash"
+
 # Add:
 #
 # - Bluetooth tools to help diagnose and debug Bluetooth problems
