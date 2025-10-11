@@ -1,0 +1,26 @@
+From 1b7f2d336cfc38074021e4c2056b92b7a371f7cb Mon Sep 17 00:00:00 2001
+From: Ed Beroset <beroset@ieee.org>
+Date: Sat, 11 Oct 2025 14:25:47 -0400
+Subject: [PATCH] Remmove tests and doc from build
+
+Signed-off-by: Ed Beroset <beroset@ieee.org>
+---
+ accounts-qt.pro | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/accounts-qt.pro b/accounts-qt.pro
+index dfaaacc..fc70920 100644
+--- a/accounts-qt.pro
++++ b/accounts-qt.pro
+@@ -2,10 +2,9 @@ include( common-vars.pri )
+ 
+ TEMPLATE  = subdirs
+ CONFIG   += ordered
+-SUBDIRS  += Accounts tests
++SUBDIRS  += Accounts
+ 
+ include( common-project-config.pri )
+-include( doc/doc.pri )
+ 
+ DISTNAME = $${PROJECT_NAME}-$${PROJECT_VERSION}
+ EXCLUDES = \
